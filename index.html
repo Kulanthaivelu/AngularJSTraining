@@ -7,7 +7,44 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- <div ng-controller="MyCtrl" >
+        {{myval}}
+        {{1+1}}
+        <input type="text" ng-model="myval">
+        <button ng-click="onClick()">Click Me</button>
+
+        <div ng-show="myval.length === 0">
+                myval is empty
+        </div>
+    </div> -->
+    <div ng-controller="MyCtrl">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="stu in students">
+                    <td>{{stu.name}}</td>
+                    <td>{{stu.age}}</td>
+                    <td>
+                        <button ng-click="onViewBtnClick(stu)">View Details</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div ng-show="selectedStudent">
+            <h2>Student Details</h2>
+            <p>Name: {{selectedStudent.name}} </p>
+            <p>Age: {{selectedStudent.age}}</p>
+        </div>
+    </div>
+    
     <script src="angular.min.js"></script>
     <script src="app.js"></script>
+    <script src="app.service.js"></script>
 </body>
 </html>
